@@ -1,29 +1,49 @@
 version: "3"
 
+# run this file or ssa-consultations-api/docker-compose.yml file as All containers configured in single file, running this file creates all images
+
 services:
   appointment-app:
     container_name: appointment-api
     image: appointment-img
     restart: always
-    build: .
+    build: 
+      ./ssa-appointments-api
     ports:
       - 8082:8082 
     environment:
       MYSQL_HOST: mysqldb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: mysql
       MYSQL_PORT: 3306
+    depends_on:
+      - mysqldb
+  
+  consultation-app:
+    container_name: consultation-api
+    image: consultation-img
+    restart: always
+    build: 
+      ./ssa-consultations-api
+    ports:
+      - 8083:8083 
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_PORT: 3306
+    depends_on:
+      - mysqldb
       
   mysqldb: 
     container_name: mysqldb
     image: mysql
+    restart: always
     volumes:
       -  /home/sowmya/Desktop/db:/var/lib/mysql
     ports: 
      - 3307:3306   
     environment:
-      MYSQL_DATABASE: clinicappdb
       MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: clinicappdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mysql
       
 
        
