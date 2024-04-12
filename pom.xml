@@ -8,11 +8,11 @@
 		<version>3.2.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<artifactId>ssa-appointments-api</artifactId>
+	<artifactId>ssa-appointments-microservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>ssa-appointments-api</name>
-	<description>SSA - Appointments API</description>
+	<name>ssa-appointments-microservice</name>
+	<description>SSA - Appointments Microservice</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

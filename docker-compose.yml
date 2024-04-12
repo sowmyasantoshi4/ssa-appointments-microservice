@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  appointment-app:
-    container_name: appointment-api
+  appointment-ms:
+    container_name: appointment-ms
     image: appointment-img
     restart: always
     build: 
@@ -17,12 +17,12 @@ services:
     depends_on:
       - mysqldb
   
-  consultation-app:
-    container_name: consultation-api
+  consultation-ms:
+    container_name: consultation-ms
     image: consultation-img
     restart: always
     build: 
-      ../ssa-consultations-api
+      ../ssa-consultations-microservice
     ports:
       - 8083:8083 
     environment:

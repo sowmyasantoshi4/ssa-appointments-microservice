@@ -32,7 +32,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
-@OpenAPIDefinition(info=@Info(title="SSA - Appointment API"))
+@OpenAPIDefinition(info=@Info(title="Appointment Ms"))
 public class AppointmentController {
 	
 	
